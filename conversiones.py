@@ -12,8 +12,8 @@ conversion_seleccionada = st.sidebar.selectbox("Seleccione el tipo de conversió
                                                 "Conversiones de área", "Conversiones de energía",
                                                 "Conversiones de presión", "Conversiones de tamaño de datos"])
 
-# Mostrar el tipo de conversión seleccionado
-st.sidebar.write(f"Ha seleccionado: {conversion_seleccionada}")
+# Mostrar el tipo de conversión seleccionado en la barra lateral
+st.sidebar.text(f"Ha seleccionado: {conversion_seleccionada}")
 
 # Realizar conversiones de temperatura
 if conversion_seleccionada == "Conversiones de temperatura":
@@ -36,6 +36,7 @@ if conversion_seleccionada == "Conversiones de temperatura":
         valor_convertido = valor_original - 273.15
         st.write(f"{valor_original} K equivale a {valor_convertido} °C")
 
+# Realizar conversiones de longitud
 elif conversion_seleccionada == "Conversiones de longitud":
     tipo_conversion = st.selectbox("Seleccione el tipo de conversión:",
                                    ["Pies a metros", "Metros a pies",
